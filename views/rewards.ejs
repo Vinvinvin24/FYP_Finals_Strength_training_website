@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/rewards-style.css">
+    <title>Rewards</title>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="../images/logo.jpg" alt="Logo" class="logo">
+            <h1>Strength Training Journey</h1>
+        </div>
+        <button id="toggleTextSize" style="float: right;">Toggle Text Size</button>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/login">Login</a>
+        <a href="/exercises">Exercises</a>
+        <a href="/resources">Resources</a>
+        <a href="/rewards">Rewards</a>
+        <a href="/profile">Profile</a>
+    </nav>
+    <main>
+        <h2>Rewards Catalog</h2>
+        <div class="grid-container">
+            <% rewards.forEach(function(reward) { %>
+                <div class="grid-item">
+                    <%= reward.name %>
+                    <%= reward.pointsRequired %> points
+                    <% if (user && user.points >= reward.pointsRequired) { %>
+                      <form action="/redeemReward" method="post">
+                        <input type="hidden" name="rewardId" value="<%= reward.id %>">
+                        <input type="hidden" name="pointsRequired" value="<%= reward.pointsRequired %>">
+                        <button type="submit" class="redeem-button">Redeem</button>
+                      </form>
+                    <% } else { %>
+                      <button disabled>Not enough points</button>
+                    <% } %>
+                </div>
+              <% }); %>              
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Exercise Website</p>
+    </footer>
+    <script src="../scripts/rewards-script.js"></script>
+</body>
+</html>

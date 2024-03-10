@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/index-style.css">
+    <title>Home Page</title>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.jpg" alt="Logo" class="logo">
+            <h1>Strength Training Journey</h1>
+        </div>
+        <button id="toggleTextSize" style="float: right;">Toggle Text Size</button>
+    </header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/login">Login</a>
+      <a href="/exercises">Exercises</a>
+      <a href="/resources">Resources</a>
+      <a href="/rewards">Rewards</a>
+      <a href="/profile">Profile</a>
+  </nav>
+    <main>
+        <div class="slideshow-container">
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+
+            <div class="mySlides fade">
+                <img src="images/slide1.jpg" style="width:100%">
+                <div class="text-container">
+                  <p>Embark on a personalized strength training journey designed for novices.</p>
+                </div>
+              </div>
+              
+              <div class="mySlides fade">
+                <img src="images/slide2.jpg" style="width:100%">
+                <div class="text-container">
+                  <p>Monitor your workouts across sessions with ease, keeping motivated and on track.</p>
+                </div>
+              </div>
+              
+              <div class="mySlides fade">
+                <img src="images/slide3.jpg" style="width:100%">
+                <div class="text-container">
+                  <p>Access a wealth of resources and professional advice to improve your technique.</p>
+                </div>
+              </div>
+              
+
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+
+          <div class="introduction">
+            <p>Welcome to our Strength Training Journey, a dedicated platform designed to guide novices through the world of fitness and strength training. Our mission is to make strength training accessible and understandable for everyone, regardless of their experience level. With personalized training programs, real-time progress tracking, and a wealth of resources and expert advice, we aim to empower you to achieve your fitness goals safely and effectively. Whether you're looking to start your fitness journey, enhance your workout routine, or find supportive resources, you've come to the right place. Let's embark on this journey together, transforming challenges into achievements, one step at a time.</p>
+        </div>
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 Exercise Website</p>
+    </footer>
+
+    <script src="scripts/index-script.js"></script>
+</body>
+</html>

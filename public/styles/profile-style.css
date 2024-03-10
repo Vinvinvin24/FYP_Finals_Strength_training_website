@@ -1,0 +1,128 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px;
+}
+
+main {
+    padding-top: 80px; /* Adjust based on the height of your header */
+}
+
+#toggleTextSize {
+    padding: 10px 20px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#toggleTextSize:hover {
+    background-color: #1f648b;
+}
+
+nav {
+    background-color: #34495e;
+    overflow: hidden;
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav a:hover {
+    background-color: #2980b9;
+    color: #fff;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    max-width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.user-profile {
+    max-width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-detail {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.user-detail h2 {
+    color: #2c3e50;
+}
+
+.user-detail p {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Adjust button styles if needed */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline for anchor elements styled as buttons */
+}
+
+.button:hover {
+    background-color: #1f648b;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 600px) {
+    .user-detail p {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .user-detail p {
+        font-size: 17px;
+    }
+}
