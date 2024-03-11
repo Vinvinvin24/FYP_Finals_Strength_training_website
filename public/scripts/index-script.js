@@ -40,7 +40,7 @@ autoShowSlides(); // Call the function to start the slideshow
 let isTextSizeIncreased = false;
 
 document.getElementById('toggleTextSize').addEventListener('click', function() {
-  // Target specific elements for resizing. Adjust selectors as needed.
+  
   const elementsToResize = document.querySelectorAll('main, main p, .text-container p');
 
   if (isTextSizeIncreased) {
@@ -52,7 +52,7 @@ document.getElementById('toggleTextSize').addEventListener('click', function() {
   } else {
     // Increase font sizes
     elementsToResize.forEach(el => {
-      el.style.fontSize = '28px'; // Changed to use px
+      el.style.fontSize = '28px'; 
     });
     isTextSizeIncreased = true;
   }

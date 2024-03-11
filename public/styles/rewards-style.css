@@ -15,7 +15,7 @@ header {
 }
 
 main {
-    padding-top: 80px; /* Adjust based on the height of your header */
+    padding-top: 80px;
 }
 
 #toggleTextSize {
@@ -79,10 +79,10 @@ h2 {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Creates a 3-column grid */
-    grid-gap: 20px; /* Space between grid items */
-    max-width: 960px; /* Adjust as needed */
-    margin: 0 auto; /* Center the grid in the middle of the page */
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 20px; 
+    max-width: 960px; 
+    margin: 0 auto; 
 }
 
 .grid-item {

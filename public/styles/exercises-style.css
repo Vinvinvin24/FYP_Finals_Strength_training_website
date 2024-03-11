@@ -15,7 +15,7 @@ header {
 }
 
 main {
-    padding-top: 80px; /* Adjust based on the height of your header */
+    padding-top: 80px;
 }
 
 #toggleTextSize {

@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.json())
             .then(data => {
                 alert(data.message);
-                // Optionally disable the button after successful redemption
+                
                 this.disabled = true;
             })
             .catch(error => console.error('Error:', error));
