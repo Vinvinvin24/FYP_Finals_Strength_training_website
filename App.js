@@ -103,7 +103,7 @@ app.post('/redeemReward', (req, res) => {
 app.get('/login', (req, res) => {
   if (req.session.user) {
     // User is already logged in, redirect them to their profile or another page
-    res.redirect('/profile'); // Adjust '/profile' to wherever you'd like logged-in users to go
+    res.redirect('/profile');
   } else {
     // User is not logged in, serve the login.html page
     res.sendFile(path.join(__dirname, 'public', 'views', 'login.html'));
@@ -121,7 +121,7 @@ app.post('/signup', (req, res) => {
     dbConnection.query('INSERT INTO users (username, password, email) VALUES (?, ?, ?)', [username, hash, email], (error, results) => {
       if (error) {
         console.error('Error inserting new user into database:', error);
-        // Consider providing a user-friendly error page or message
+        // Error page or message
         res.status(500).send('An error occurred during registration.');
       } else {
         console.log('Signup successful:', results);
@@ -146,7 +146,7 @@ app.post('/login', (req, res) => {
       if (err) throw err;
       if (result) {
         req.session.user = user;
-        res.redirect('/rewards'); // or redirect to user's profile or another page
+        res.redirect('/profile');
       } else {
         res.send('Password incorrect.');
       }
@@ -180,9 +180,9 @@ app.post('/addRoutine', (req, res) => {
   if (!req.session.user) {
     return res.status(401).send('Please log in to add workout routines');
   }
-  const { routineId, weekStartDate } = req.body; // Ensure you have inputs for these in your form
+  const { routineId, weekStartDate } = req.body; 
   const completed = 0; // Assuming routine is not completed when first added
-  const userId = req.session.user.id; // Assuming you store the user ID in the session upon login
+  const userId = req.session.user.id; 
 
   const query = 'INSERT INTO userworkoutplans (userId, routineId, weekStartDate, completed) VALUES (?, ?, ?, ?)';
   dbConnection.query(query, [userId, routineId, weekStartDate, completed], (err, result) => {
@@ -200,7 +200,7 @@ app.get('/profile', (req, res) => {
     return res.redirect('/login');
   }
 
-  const userId = req.session.user.id; // Assuming you store logged-in user info in session
+  const userId = req.session.user.id; 
 
   // Query for user's basic info and total points
   const userInfoQuery = 'SELECT username, points FROM users WHERE id = ?';
@@ -219,14 +219,12 @@ app.get('/profile', (req, res) => {
     JOIN rewards r ON ur.rewardId = r.id
     WHERE ur.userId = ?`;
 
-  // Execute these queries (consider using Promise.all for parallel execution if possible)
-  // For simplicity, executing them one after another here
   dbConnection.query(userInfoQuery, [userId], (err, userInfoResults) => {
     if (err) {
       console.error('Error fetching user info:', err);
       return res.status(500).send('Server error occurred fetching user info.');
     }
-    const user = userInfoResults[0]; // Assuming the query returns one result
+    const user = userInfoResults[0];
 
     dbConnection.query(workoutPlansQuery, [userId], (err, workoutPlansResults) => {
       if (err) {
@@ -252,7 +250,7 @@ app.get('/profile', (req, res) => {
 });
 
 app.post('/markCompleted', (req, res) => {
-  const { planId } = req.body; // Ensure this matches the name attribute in your form's input
+  const { planId } = req.body;
 
   const query = 'UPDATE userworkoutplans SET completed = 1 WHERE id = ?';
   dbConnection.query(query, [planId], (err, result) => {
@@ -261,7 +259,7 @@ app.post('/markCompleted', (req, res) => {
       return res.status(500).send('Error updating workout status.');
     }
     console.log('Workout marked as completed successfully');
-    res.redirect('/profile'); // Or send a JSON response if you're handling this via AJAX
+    res.redirect('/profile'); 
   });
 });
 
