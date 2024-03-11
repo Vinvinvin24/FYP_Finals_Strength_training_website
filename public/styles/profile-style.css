@@ -15,7 +15,7 @@ header {
 }
 
 main {
-    padding-top: 80px; /* Adjust based on the height of your header */
+    padding-top: 80px;
 }
 
 #toggleTextSize {
@@ -98,7 +98,6 @@ footer {
     color: #333;
 }
 
-/* Adjust button styles if needed */
 .button {
     display: inline-block;
     padding: 10px 20px;
@@ -107,7 +106,7 @@ footer {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    text-decoration: none; /* Remove underline for anchor elements styled as buttons */
+    text-decoration: none;
 }
 
 .button:hover {
