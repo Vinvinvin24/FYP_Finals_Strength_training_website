@@ -250,10 +250,10 @@ app.get('/profile', (req, res) => {
 });
 
 app.post('/markCompleted', (req, res) => {
-  const { planId } = req.body;
+  const { id } = req.body;
 
   const query = 'UPDATE userworkoutplans SET completed = 1 WHERE id = ?';
-  dbConnection.query(query, [planId], (err, result) => {
+  dbConnection.query(query, [id], (err, result) => {
     if (err) {
       console.error('Error marking workout as completed:', err);
       return res.status(500).send('Error updating workout status.');
