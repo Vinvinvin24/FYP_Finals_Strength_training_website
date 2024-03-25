@@ -44,7 +44,7 @@ app.get('/resources', (req, res) => {
 });
 
 
-// Dynamic EJS route for '/rewards'
+// Dynamic EJS routes
 app.get('/rewards', (req, res) => {
   dbConnection.query('SELECT * FROM rewards', (err, rewards) => {
     if (err) {
