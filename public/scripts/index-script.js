@@ -46,7 +46,7 @@ document.getElementById('toggleTextSize').addEventListener('click', function() {
   if (isTextSizeIncreased) {
     // Reset font sizes
     elementsToResize.forEach(el => {
-      el.style.fontSize = ''; // Resets to the stylesheet default
+      el.style.fontSize = '';
     });
     isTextSizeIncreased = false;
   } else {
